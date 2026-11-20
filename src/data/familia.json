@@ -1,0 +1,207 @@
+{
+  "familia": "Martinez Flores",
+  "nombresEnDatos": {
+    "pepe": "Jose Luis Abuelo"
+  },
+  "familias": [
+    {
+      "id": "jose-luis-y-lola",
+      "nombre": "Jose Luis y Lola"
+    },
+    {
+      "id": "mari-carmen-y-cesar",
+      "nombre": "Mari Carmen y Cesar",
+      "fotoPareja": "/people/mari-carmen-y-cesar.webp"
+    },
+    {
+      "id": "belen-y-jose-maria",
+      "nombre": "Belén y José María"
+    },
+    {
+      "id": "lourdes-y-alvaro",
+      "nombre": "Lourdes y Alvaro"
+    }
+  ],
+  "personas": [
+    {
+      "id": "carmen",
+      "nombre": "Carmen",
+      "apodo": "Nuestra conferenciante y activista",
+      "familia": null,
+      "rol": "abuelo",
+      "foto": "/people/carmen.webp",
+      "nacido2026": false
+    },
+    {
+      "id": "pepe",
+      "nombre": "Pepe",
+      "apodo": "El renovado: dientes nuevos y más joven que nunca",
+      "familia": null,
+      "rol": "abuelo",
+      "foto": "/people/pepe.webp",
+      "nacido2026": false
+    },
+    {
+      "id": "jose-luis",
+      "nombre": "Jose Luis",
+      "apodo": "El pianista",
+      "familia": "jose-luis-y-lola",
+      "rol": "adulto",
+      "foto": "/people/jose-luis.webp",
+      "nacido2026": false
+    },
+    {
+      "id": "lola",
+      "nombre": "Lola",
+      "apodo": "La agente del pianista, albañil y jardinera cuando se necesita",
+      "familia": "jose-luis-y-lola",
+      "rol": "adulto",
+      "foto": "/people/lola.webp",
+      "nacido2026": false
+    },
+    {
+      "id": "mario",
+      "nombre": "Mario",
+      "apodo": "",
+      "familia": "jose-luis-y-lola",
+      "rol": "niño",
+      "foto": "/people/mario.webp",
+      "nacido2026": false
+    },
+    {
+      "id": "julio",
+      "nombre": "Julio",
+      "apodo": "",
+      "familia": "jose-luis-y-lola",
+      "rol": "niño",
+      "foto": "/people/julio.webp",
+      "nacido2026": false
+    },
+    {
+      "id": "ines",
+      "nombre": "Inés",
+      "apodo": "",
+      "familia": "jose-luis-y-lola",
+      "rol": "niño",
+      "foto": "/people/ines.webp",
+      "nacido2026": false
+    },
+    {
+      "id": "mari-carmen",
+      "nombre": "Mari Carmen",
+      "apodo": "La bailarina de profesión y matrona de hobby",
+      "familia": "mari-carmen-y-cesar",
+      "rol": "adulto",
+      "foto": "/people/mari-carmen.webp",
+      "nacido2026": false
+    },
+    {
+      "id": "cesar",
+      "nombre": "Cesar",
+      "apodo": "Manejando el mundo desde un servidor local",
+      "familia": "mari-carmen-y-cesar",
+      "rol": "adulto",
+      "foto": "/people/cesar.webp",
+      "nacido2026": false
+    },
+    {
+      "id": "victor",
+      "nombre": "Víctor",
+      "apodo": "",
+      "familia": "mari-carmen-y-cesar",
+      "rol": "niño",
+      "foto": "/people/victor.webp",
+      "nacido2026": false
+    },
+    {
+      "id": "paula",
+      "nombre": "Paula",
+      "apodo": "",
+      "familia": "mari-carmen-y-cesar",
+      "rol": "niño",
+      "foto": "/people/paula.webp",
+      "nacido2026": false
+    },
+    {
+      "id": "belen",
+      "nombre": "Belén",
+      "apodo": "La biciclista",
+      "familia": "belen-y-jose-maria",
+      "rol": "adulto",
+      "foto": "/people/belen.webp",
+      "nacido2026": false
+    },
+    {
+      "id": "jose-maria",
+      "nombre": "José María",
+      "apodo": "Conductor de Barcelona a La Redondela",
+      "familia": "belen-y-jose-maria",
+      "rol": "adulto",
+      "foto": "/people/jose-maria.webp",
+      "nacido2026": false
+    },
+    {
+      "id": "gael",
+      "nombre": "Gael",
+      "apodo": "",
+      "familia": "belen-y-jose-maria",
+      "rol": "niño",
+      "foto": "/people/gael.webp",
+      "nacido2026": false
+    },
+    {
+      "id": "joana",
+      "nombre": "Joana",
+      "apodo": "",
+      "familia": "belen-y-jose-maria",
+      "rol": "niño",
+      "foto": "/people/joana.webp",
+      "nacido2026": true
+    },
+    {
+      "id": "lourdes",
+      "nombre": "Lourdes",
+      "apodo": "La madre ganadora",
+      "familia": "lourdes-y-alvaro",
+      "rol": "adulto",
+      "foto": "/people/lourdes.webp",
+      "nacido2026": false
+    },
+    {
+      "id": "alvaro",
+      "nombre": "Alvaro",
+      "apodo": "El conductor de motos GRANDES",
+      "familia": "lourdes-y-alvaro",
+      "rol": "adulto",
+      "foto": "/people/alvaro.webp",
+      "nacido2026": false
+    },
+    {
+      "id": "alejo",
+      "nombre": "Alejo",
+      "apodo": "",
+      "familia": "lourdes-y-alvaro",
+      "rol": "niño",
+      "foto": "/people/alejo.webp",
+      "nacido2026": false
+    },
+    {
+      "id": "matias",
+      "nombre": "Matías",
+      "apodo": "",
+      "familia": "lourdes-y-alvaro",
+      "rol": "niño",
+      "foto": "/people/matias.webp",
+      "nacido2026": false
+    },
+    {
+      "id": "elias",
+      "nombre": "Elías",
+      "apodo": "",
+      "familia": "lourdes-y-alvaro",
+      "rol": "niño",
+      "foto": "/people/elias.webp",
+      "nacido2026": true
+    }
+  ]
+}

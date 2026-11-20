@@ -1,0 +1,115 @@
+{
+  "descripcion": "Cada valor = id de a quien regaló esa persona ese año; null = dato no disponible",
+  "sorteos": [
+    {
+      "id": 1,
+      "nombre": "Jose Luis Abuelo (Pepe)",
+      "noPuedeRegalarA": 2,
+      "regalos": {
+        "2022": 3,
+        "2023": 4,
+        "2024": 6,
+        "2025": null
+      }
+    },
+    {
+      "id": 2,
+      "nombre": "Carmen Abuela",
+      "noPuedeRegalarA": 1,
+      "regalos": {
+        "2022": 4,
+        "2023": 3,
+        "2024": 3,
+        "2025": 8
+      }
+    },
+    {
+      "id": 3,
+      "nombre": "Belén",
+      "noPuedeRegalarA": 4,
+      "regalos": {
+        "2022": 8,
+        "2023": 7,
+        "2024": null,
+        "2025": 9
+      }
+    },
+    {
+      "id": 4,
+      "nombre": "José María",
+      "noPuedeRegalarA": 3,
+      "regalos": {
+        "2022": 7,
+        "2023": 8,
+        "2024": 5,
+        "2025": 1
+      }
+    },
+    {
+      "id": 5,
+      "nombre": "Mari Carmen",
+      "noPuedeRegalarA": 6,
+      "regalos": {
+        "2022": 10,
+        "2023": 9,
+        "2024": 7,
+        "2025": null
+      }
+    },
+    {
+      "id": 6,
+      "nombre": "Cesar",
+      "noPuedeRegalarA": 5,
+      "regalos": {
+        "2022": 9,
+        "2023": 10,
+        "2024": null,
+        "2025": null
+      }
+    },
+    {
+      "id": 7,
+      "nombre": "José Luis",
+      "noPuedeRegalarA": 8,
+      "regalos": {
+        "2022": 2,
+        "2023": 1,
+        "2024": null,
+        "2025": 3
+      }
+    },
+    {
+      "id": 8,
+      "nombre": "Lola",
+      "noPuedeRegalarA": 7,
+      "regalos": {
+        "2022": 1,
+        "2023": 2,
+        "2024": 1,
+        "2025": null
+      }
+    },
+    {
+      "id": 9,
+      "nombre": "Lourdes",
+      "noPuedeRegalarA": 10,
+      "regalos": {
+        "2022": 6,
+        "2023": 5,
+        "2024": 2,
+        "2025": 2
+      }
+    },
+    {
+      "id": 10,
+      "nombre": "Alvaro",
+      "noPuedeRegalarA": 9,
+      "regalos": {
+        "2022": 5,
+        "2023": 6,
+        "2024": 4,
+        "2025": 5
+      }
+    }
+  ]
+}
