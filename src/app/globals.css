@@ -181,7 +181,8 @@ button.avatar:hover, button.avatar:focus-visible { transform: scale(1.1) rotate(
 .mg-row { padding: 4px 0; border-top: 1px solid rgba(255, 244, 220, .08); }
 .mg-name { text-align: left; font-size: 13px; font-weight: 600; }
 .mg-cell { display: grid; place-items: center; min-height: 36px; }
-.mg-cell.lost b { width: 30px; height: 30px; border-radius: 50%; background: repeating-linear-gradient(45deg, var(--gold) 0 6px, var(--gold2) 6px 12px); color: var(--bg); display: grid; place-items: center; animation: bob 2.4s ease-in-out infinite; }
+.mg-cell.lost b { width: 30px; height: 30px; border-radius: 50%; background: repeating-linear-gradient(45deg, var(--gold) 0 6px, var(--gold2) 6px 12px); color: var(--bg); display: grid; place-items: center; animation: twinkle 2.4s ease-in-out infinite; }
+.mg-cell .avatar.xs { width: 36px; }
 .clues { display: grid; gap: 14px; max-width: 720px; margin: 0 auto; text-align: left; }
 .clue { border-left: 4px solid var(--gold); padding: 8px 18px; background: rgba(244, 194, 91, .08); border-radius: 0 18px 18px 0; }
 .clue b { font-family: var(--serif); font-size: 32px; color: var(--gold); }
