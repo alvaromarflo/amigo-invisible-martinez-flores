@@ -40,7 +40,7 @@ Los abuelos **Carmen** y **Pepe**, y cuatro ramas: Jose Luis y Lola, Mari Carmen
 Necesitas [Node.js](https://nodejs.org) instalado.
 
 1. **Instalar**: `npm install`
-2. **Arrancar**: `npm run build` y después `npm start`
+2. **Arrancar**: `SITE_PASSWORD=tu-contraseña npm run build && SITE_PASSWORD=tu-contraseña npm start`
 3. **Abrir**: en el ordenador, <http://localhost:4173>. En el móvil (misma wifi), `http://TU-IP-LOCAL:4173` (en Mac: `ipconfig getifaddr en0`).
 
 ## 🧑‍🎄 Añadir un sorteo nuevo o cambiar una foto
@@ -53,6 +53,13 @@ Todo sale de dos archivos en `src/data/`; las estadísticas se recalculan solas 
 
 ## 🛠️ Para los técnicos
 
-Next.js (App Router) + TypeScript + Framer Motion, CSS plano, export estático (`output: export` → `out/`). Estadísticas en `src/lib/stats.ts`, escenas en `src/components/`. Respeta `prefers-reduced-motion`. `npm run dev` para desarrollo y `npm run lint` para revisar. `INFORME-DATOS.md` valida los sorteos y `screenshots/` guarda capturas de cada acto.
+Next.js (App Router) + TypeScript + Framer Motion, CSS plano, servidor Next.js con un proxy que protege todo el sitio con contraseña. Estadísticas en `src/lib/stats.ts`, escenas en `src/components/`. Respeta `prefers-reduced-motion`. `npm run dev` para desarrollo y `npm run lint` para revisar. `INFORME-DATOS.md` valida los sorteos y `screenshots/` guarda capturas de cada acto.
 
 ¡Felices fiestas! 🎶🔔
+
+## 🔒 Contraseña de acceso
+
+Toda la web (páginas y fotos) está cerrada: solo entra quien conoce la contraseña. Se define en la variable de entorno `SITE_PASSWORD` (ver `.env.example`; nunca se sube al repo). Sin ella, nadie puede entrar. Al acertar, se guarda una cookie firmada durante 30 días.
+
+- En local: copia `.env.example` a `.env.local` y escribe la contraseña.
+- En Vercel: `npx vercel env add SITE_PASSWORD production` y luego `npx vercel deploy --prod` (o Project Settings → Environment Variables y redeploy).

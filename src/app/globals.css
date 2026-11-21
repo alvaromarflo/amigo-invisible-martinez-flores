@@ -223,3 +223,15 @@ button.avatar:hover, button.avatar:focus-visible { transform: scale(1.1) rotate(
   .snow { display: none; }
   .spin-slow, .bulb, .float, .cue span, .qmark, .mg-cell.lost b, .newbie .avatar, .wcard { animation: none !important; }
 }
+
+/* Acceso */
+.gate { position: relative; min-height: 100svh; display: grid; place-items: center; padding: 24px; overflow: hidden; background: radial-gradient(120% 70% at 78% 8%, #7a1a14 0%, #3b0d14 45%, var(--bg) 85%); }
+.gate-garland { position: absolute; top: 0; left: 0; width: 100%; height: 64px; }
+.gate-a { position: absolute; left: -40px; bottom: 6%; width: clamp(120px, 28vw, 260px); }
+.gate-b { position: absolute; right: -30px; top: 14%; width: clamp(100px, 24vw, 220px); }
+.gate-card { position: relative; z-index: 2; width: min(100%, 400px); text-align: center; display: grid; gap: 14px; padding: 32px 24px; border-radius: 32px; border: 2px solid var(--gold); background: rgba(20, 6, 10, .78); backdrop-filter: blur(8px); box-shadow: 0 30px 80px rgba(0, 0, 0, .6); }
+.gate-card h1 { font-size: clamp(40px, 12vw, 56px); }
+.gate-card p { margin: 0; }
+.gate-card input { font: inherit; font-size: 18px; padding: 14px 18px; border-radius: 99px; border: 2px solid rgba(244, 194, 91, .5); background: rgba(255, 244, 220, .08); color: var(--cream); text-align: center; }
+.gate-card button { font: inherit; font-weight: 800; font-size: 18px; padding: 14px; border: 0; border-radius: 99px; cursor: pointer; color: #fff; background: linear-gradient(90deg, var(--red2), var(--gold2)); box-shadow: 0 6px 20px rgba(224, 52, 63, .5); }
+.gate-error { color: var(--gold); font-weight: 600; }
