@@ -4,6 +4,8 @@
 
 ![Portada](screenshots/01-portada-movil.png)
 
+🌐 **Web publicada:** https://amigo-invisible-martinez-flores.vercel.app (acceso protegido con Vercel Authentication: hay fotos de los peques).
+
 ## ✨ ¿Qué es esto?
 
 Una página para recorrer **haciendo scroll** las Navidades de 2022 a 2025: quién regaló a quién, las casualidades, los récords y hasta el misterio de los regalos que nadie apuntó. Todo con nieve, luces, flores de pascua, panderetas, zambomba y un poquito de sol andaluz, porque aquí la Navidad también se canta.
