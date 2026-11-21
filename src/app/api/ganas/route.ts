@@ -5,7 +5,6 @@ const envios = new Map<string, { n: number; hasta: number }>();
 const MAX = 6;
 const VENTANA = 10 * 60 * 1000;
 const NIVELES = ["", "Pocas ganas", "Algo de ganas", "Con ganas", "Muchas ganas", "¡Ganas locas!"];
-const esc = (s: string) => s.replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`);
 
 export async function POST(req: NextRequest) {
   const ip = req.headers.get("x-forwarded-for")?.split(",")[0].trim() ?? "local";
@@ -23,21 +22,21 @@ export async function POST(req: NextRequest) {
   const comentario = typeof body.comentario === "string" ? body.comentario.trim().slice(0, 600) : "";
   if (!p || !Number.isInteger(ganas) || ganas < 1 || ganas > 5) return NextResponse.json({ ok: false }, { status: 400 });
 
-  const key = process.env.RESEND_API_KEY;
-  const to = process.env.NOTIFY_EMAIL;
-  if (!key || !to) return NextResponse.json({ ok: false, error: "config" }, { status: 503 });
+  const url = process.env.GOOGLE_SCRIPT_URL;
+  const secret = process.env.GOOGLE_SCRIPT_SECRET;
+  if (!url || !secret) return NextResponse.json({ ok: false, error: "config" }, { status: 503 });
 
-  const nivel = NIVELES[ganas];
-  const r = await fetch("https://api.resend.com/emails", {
-    method: "POST",
-    headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
-    body: JSON.stringify({
-      from: process.env.NOTIFY_FROM || "Amigo Invisible <onboarding@resend.dev>",
-      to: [to],
-      subject: `🎁 ${p.nombre}: ${nivel} (${ganas}/5)`,
-      html: `<h2>${esc(p.nombre)} ha respondido</h2><p><b>Ganas:</b> ${"🎁".repeat(ganas)} ${nivel} (${ganas}/5)</p><p><b>Comentario sobre los Reyes Magos / Papá Noel:</b><br>${comentario ? esc(comentario).replace(/\n/g, "<br>") : "<i>Sin comentario</i>"}</p>`,
-    }),
-  });
-  if (!r.ok) return NextResponse.json({ ok: false, error: "envio" }, { status: 502 });
+  try {
+    const r = await fetch(url, {
+      method: "POST",
+      redirect: "follow",
+      headers: { "Content-Type": "text/plain;charset=utf-8" },
+      body: JSON.stringify({ secret, quien: p.nombre, ganas, nivel: NIVELES[ganas], comentario }),
+    });
+    const j = await r.json().catch(() => null);
+    if (!r.ok || !j?.ok) return NextResponse.json({ ok: false, error: "envio" }, { status: 502 });
+  } catch {
+    return NextResponse.json({ ok: false, error: "envio" }, { status: 502 });
+  }
   return NextResponse.json({ ok: true });
 }
