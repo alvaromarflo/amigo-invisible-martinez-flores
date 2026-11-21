@@ -4,6 +4,7 @@ import { motion, useInView, useReducedMotion, useScroll, useSpring } from "frame
 import { Layer, Reveal, Scene } from "./Parallax";
 import { Counter } from "./Counter";
 import { Avatar, useWrapped } from "./Wrapped";
+import { CtaButton } from "./Cta";
 import { Garland, Note, Palmas, Pandereta, Poinsettia, Skyline, Star, Sun, Zambomba } from "./Art";
 import { GRUPOS, familias, persona, personas } from "@/lib/stats";
 
@@ -425,6 +426,10 @@ export function Teaser() {
           <b>Navidad 2026</b>
           <p>El regalo lo trae Papá Noel (normalmente) o los Reyes Magos, y la fiesta, como siempre, en Córdoba: con zambomba, panderetas y palmas.</p>
           {days !== null && <p className="count"><Counter to={days} /> días para Nochebuena</p>}
+        </Reveal>
+        <Reveal className="cta-wrap">
+          <CtaButton className="cta-main"><span aria-hidden="true">🎁</span> Cuéntanos tus ganas</CtaButton>
+          <p className="muted">Dinos cuántas ganas tienes y deja tu comentario para los Reyes Magos.</p>
         </Reveal>
         <a className="cue" href="#portada">Volver arriba<span aria-hidden="true">↑</span></a>
         <p className="foot">Hecho con cariño para la familia Martinez Flores · Feliz Navidad</p>

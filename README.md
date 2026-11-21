@@ -63,3 +63,12 @@ Toda la web (páginas y fotos) está cerrada: solo entra quien conoce la contras
 
 - En local: copia `.env.example` a `.env.local` y escribe la contraseña.
 - En Vercel: `npx vercel env add SITE_PASSWORD production` y luego `npx vercel deploy --prod` (o Project Settings → Environment Variables y redeploy).
+
+## 🎁 Formulario de ganas (CTA final)
+
+Al final del scroll (y con un botón flotante) cada adulto puede decir cuántas ganas tiene y dejar un comentario para los Reyes Magos / Papá Noel. Cada envío llega por email vía [Resend](https://resend.com) desde la ruta `/api/ganas` (solo accesible con la contraseña). Variables de entorno (nunca en el repo):
+
+- `RESEND_API_KEY`: API key de Resend (cuenta creada con el email que recibirá los avisos; sin dominio propio solo se puede enviar al email del dueño de la cuenta).
+- `NOTIFY_EMAIL`: email destinatario.
+
+En Vercel: `npx vercel env add RESEND_API_KEY production`, `npx vercel env add NOTIFY_EMAIL production` y `npx vercel deploy --prod`.

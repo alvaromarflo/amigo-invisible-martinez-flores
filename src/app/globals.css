@@ -235,3 +235,33 @@ button.avatar:hover, button.avatar:focus-visible { transform: scale(1.1) rotate(
 .gate-card input { font: inherit; font-size: 18px; padding: 14px 18px; border-radius: 99px; border: 2px solid rgba(244, 194, 91, .5); background: rgba(255, 244, 220, .08); color: var(--cream); text-align: center; }
 .gate-card button { font: inherit; font-weight: 800; font-size: 18px; padding: 14px; border: 0; border-radius: 99px; cursor: pointer; color: #fff; background: linear-gradient(90deg, var(--red2), var(--gold2)); box-shadow: 0 6px 20px rgba(224, 52, 63, .5); }
 .gate-error { color: var(--gold); font-weight: 600; }
+
+/* CTA ganas */
+.cta-wrap { display: grid; gap: 10px; justify-items: center; margin-top: 28px; }
+.cta-main, .fab, .ganas-send { font: inherit; font-weight: 800; border: 0; cursor: pointer; color: #fff; background: linear-gradient(90deg, var(--red2), var(--gold2)); box-shadow: 0 8px 26px rgba(224, 52, 63, .55); }
+.cta-main { font-size: clamp(18px, 5vw, 24px); padding: 18px 32px; min-height: 56px; border-radius: 99px; animation: ctaPulse 2.4s ease-in-out infinite; }
+.fab { position: fixed; right: 14px; bottom: 14px; z-index: 40; padding: 12px 18px; min-height: 48px; border-radius: 99px; font-size: 15px; }
+@keyframes ctaPulse { 50% { transform: scale(1.04); box-shadow: 0 10px 36px rgba(244, 194, 91, .55); } }
+@media (prefers-reduced-motion: reduce) { .cta-main { animation: none; } }
+.ganas { width: min(92vw, 460px); max-height: 92svh; overflow: auto; padding: 24px 20px; border: 2px solid var(--gold); border-radius: 28px; background: #1d0910; color: var(--cream); }
+.ganas::backdrop { background: rgba(10, 2, 5, .75); backdrop-filter: blur(4px); }
+.ganas form { display: grid; gap: 12px; }
+.ganas h3 { margin: 0; font-size: 26px; text-align: center; }
+.ganas label, .ganas legend { font-weight: 600; font-size: 15px; }
+.ganas select, .ganas textarea { font: inherit; font-size: 16px; padding: 12px 14px; border-radius: 16px; border: 2px solid rgba(244, 194, 91, .5); background: rgba(255, 244, 220, .08); color: var(--cream); width: 100%; }
+.ganas select option { color: #000; }
+.ganas fieldset { border: 0; padding: 0; margin: 0; }
+.ganas-niveles { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; margin-top: 8px; }
+.ganas-niveles label { display: grid; justify-items: center; gap: 2px; padding: 8px 2px; min-height: 64px; border-radius: 14px; border: 2px solid transparent; background: rgba(255, 244, 220, .08); cursor: pointer; text-align: center; }
+.ganas-niveles label.on { border-color: var(--gold); background: rgba(244, 194, 91, .22); transform: scale(1.06); }
+.ganas-niveles input { position: absolute; opacity: 0; pointer-events: none; }
+.ganas-niveles span { font-size: 26px; }
+.ganas-niveles small { font-size: 10.5px; line-height: 1.1; }
+.ganas-actions { display: flex; gap: 10px; justify-content: flex-end; }
+.ganas-send { padding: 12px 24px; min-height: 48px; border-radius: 99px; font-size: 16px; }
+.ganas-send:disabled { opacity: .6; }
+.ganas-cancel { font: inherit; padding: 12px 18px; min-height: 48px; border-radius: 99px; border: 2px solid rgba(244, 194, 91, .5); background: none; color: var(--cream); cursor: pointer; }
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.ganas-ok { display: grid; gap: 12px; text-align: center; justify-items: center; }
+.ganas-pop { font-size: 64px; animation: pop .7s cubic-bezier(.2, 1.6, .4, 1); }
+@keyframes pop { from { transform: scale(0) rotate(-20deg); } }
