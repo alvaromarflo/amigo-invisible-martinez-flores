@@ -69,3 +69,15 @@ Toda la web (páginas y fotos) está cerrada: solo entra quien conoce la contras
 Al final del scroll (y con un botón flotante) cada adulto puede decir cuántas ganas tiene y dejar un comentario para los Reyes Magos / Papá Noel. Cada envío se guarda en una hoja de Google Sheets y llega por email, usando un Google Apps Script (sin cuentas nuevas). La ruta `/api/ganas` solo funciona con la contraseña de acceso. Guía paso a paso: [`docs/apps-script/LEEME.md`](docs/apps-script/LEEME.md).
 
 Variables de entorno (nunca en el repo): `GOOGLE_SCRIPT_URL` y `GOOGLE_SCRIPT_SECRET`.
+
+## 🎅 Panel de gestión del sorteo (`/gestion`)
+
+Zona de administración (contraseña distinta, `ADMIN_PASSWORD`) para gestionar participantes y correos, hacer el sorteo y enviar a cada uno su amigo invisible por email. **Nadie, ni el administrador, ve quién regala a quién**: el panel solo muestra «Pendiente / Enviado ✅ / Error ❌».
+
+- Participantes (nombre y correo; se pueden importar pegando `nombre, correo`) y exclusiones: *Pareja* (simétrica) y *Le regaló el año pasado* (dirigida), precargadas desde el histórico de `src/data/sorteos.json`. Los correos reales solo viven en la base de datos, nunca en el repo.
+- El sorteo se hace en el servidor (backtracking aleatorio con `crypto`). Solo una vez; repetirlo exige doble confirmación y el nuevo correo avisa de que sustituye al anterior.
+- **Modo ensayo**: envía todos los correos a una única dirección con el regalado oculto, sin sortear.
+- Privacidad de las asignaciones: durante el envío se guardan cifradas (AES-256-GCM, `ASSIGN_KEY`) y se borran en cuanto cada correo sale; solo quedan los de los envíos fallidos, para poder «Reintentar fallidos». En la base de datos solo se verían textos cifrados.
+- Aviso: el proveedor de correo guarda lo enviado (carpeta «Enviados» o panel de Resend). Quien tenga acceso a esa cuenta podría leer los correos, así que usa una cuenta de envío que no participe en el sorteo.
+
+Variables (ver `.env.example`): `ADMIN_PASSWORD`, `ASSIGN_KEY` (`openssl rand -base64 32`), base de datos Upstash Redis (`UPSTASH_REDIS_REST_URL`/`_TOKEN`, que crea la integración de Vercel) y correo con **Resend** (`RESEND_API_KEY`, `MAIL_FROM`, requiere dominio verificado) o con un **script de Google** (`MAIL_SCRIPT_URL`, `MAIL_SCRIPT_SECRET`, código en `docs/apps-script/Correo.gs`). Tests de la lógica: `npm test`.

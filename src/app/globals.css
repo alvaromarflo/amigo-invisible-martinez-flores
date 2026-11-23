@@ -265,3 +265,36 @@ button.avatar:hover, button.avatar:focus-visible { transform: scale(1.1) rotate(
 .ganas-ok { display: grid; gap: 12px; text-align: center; justify-items: center; }
 .ganas-pop { font-size: 64px; animation: pop .7s cubic-bezier(.2, 1.6, .4, 1); }
 @keyframes pop { from { transform: scale(0) rotate(-20deg); } }
+
+/* Gestión */
+.gest { max-width: 640px; margin: 0 auto; padding: 20px 14px 80px; display: grid; gap: 16px; color: var(--cream); }
+.gest-head { text-align: center; display: grid; gap: 6px; justify-items: center; }
+.gest-head h1 { margin: 0; font-size: clamp(30px, 9vw, 44px); }
+.gest-card { display: grid; gap: 10px; padding: 18px 16px; border-radius: 24px; border: 1.5px solid rgba(244, 194, 91, .45); background: rgba(29, 9, 16, .9); margin: 0; }
+.gest-card h2, .gest-card h3 { margin: 0; font-size: 22px; }
+.gest-card h3 { font-size: 17px; margin-top: 8px; }
+.gest-card p { margin: 0; }
+.gest input:not([type="checkbox"]), .gest select, .gest textarea { font: inherit; font-size: 16px; padding: 11px 14px; border-radius: 14px; border: 1.5px solid rgba(244, 194, 91, .45); background: rgba(255, 244, 220, .08); color: var(--cream); width: 100%; min-width: 0; }
+.gest select option { color: #000; }
+.gest button:disabled { opacity: .5; cursor: not-allowed; }
+.gest-row { display: grid; grid-template-columns: 1fr 1.4fr 44px; gap: 6px; }
+@media (max-width: 480px) { .gest-row { grid-template-columns: 1fr 44px; } .gest-row input:nth-child(2) { grid-column: 1; } .gest-row .gest-x { grid-row: 1 / span 2; grid-column: 2; } }
+.gest-x { min-height: 44px; border-radius: 14px; border: 1.5px solid rgba(244, 194, 91, .45); background: none; cursor: pointer; font-size: 18px; }
+.gest details summary { cursor: pointer; padding: 8px 0; color: var(--gold); }
+.gest-excl { display: grid; grid-template-columns: 1fr; gap: 6px; padding: 10px 0; border-top: 1px solid rgba(244, 194, 91, .2); }
+.gest-excl span { font-weight: 700; }
+.gest-excl button { font: inherit; font-size: 14px; min-height: 44px; padding: 8px 12px; border-radius: 99px; border: 1.5px solid rgba(244, 194, 91, .45); background: none; color: var(--cream); cursor: pointer; text-align: left; }
+.gest-excl button.on { background: rgba(224, 52, 63, .35); border-color: var(--gold); font-weight: 700; }
+@media (min-width: 560px) { .gest-excl { grid-template-columns: 1fr auto auto; align-items: center; } }
+.gest-avisos { margin: 0; padding-left: 18px; color: var(--gold); font-size: 14px; }
+.gest-warn { border-color: var(--gold); background: rgba(122, 26, 20, .55); padding-left: 32px; }
+.gest-estados { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+.gest-estados li { display: flex; justify-content: space-between; gap: 8px; padding: 8px 0; border-bottom: 1px solid rgba(244, 194, 91, .15); }
+.gest-big { padding: 16px; font-size: 17px; }
+.gest-confirm { display: grid; gap: 10px; padding: 14px; border-radius: 18px; border: 2px solid var(--gold); background: rgba(122, 26, 20, .55); }
+.gest-check { display: flex; gap: 8px; align-items: center; }
+.gest-check input { width: 22px; height: 22px; }
+.gest-save { position: sticky; bottom: 10px; display: flex; justify-content: center; z-index: 5; }
+.gest-msg { text-align: center; font-weight: 700; color: var(--gold); }
+.gest .ganas-cancel, .gest .ganas-send { width: 100%; }
+.gest-head .ganas-cancel { width: auto; }
